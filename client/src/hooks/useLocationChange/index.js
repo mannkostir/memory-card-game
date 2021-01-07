@@ -1,0 +1,1 @@
+export { useLocationChange } from './useLocationChange';

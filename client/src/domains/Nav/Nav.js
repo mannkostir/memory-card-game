@@ -14,6 +14,8 @@ import { useLanguageContext } from 'context/LanguageContext';
 import { useAuthState } from 'context/AuthContext';
 import UserDropdown from './components/UserDropdown';
 import SettingsDropdown from './components/SettingsDropdown';
+import { useAppLookState } from 'context/AppLookContext/useAppLookState';
+import { useEffect } from 'react';
 
 const Nav = () => {
   const { isAuthenticated } = useAuthState();
@@ -21,13 +23,11 @@ const Nav = () => {
 
   const mainNav = useRef();
 
-  const darkenNav = () => {
-    mainNav.current.setAttribute('darken', true);
-  };
+  const { isNavHidden } = useAppLookState();
 
-  const lightenNav = () => {
-    mainNav.current.setAttribute('darken', false);
-  };
+  useEffect(() => {
+    mainNav.current.setAttribute('isNavHidden', isNavHidden);
+  }, [isNavHidden]);
 
   return (
     <>
@@ -68,7 +68,7 @@ const Nav = () => {
           </ButtonsWrapper>
         </MainNav>
       ) : (
-        <MainNav ref={mainNav}>
+        <MainNav ref={mainNav} id="mainNav">
           <ButtonsWrapper aria-label={'language-select-buttons'}>
             <LanguageSelect />
           </ButtonsWrapper>
@@ -85,12 +85,7 @@ const Nav = () => {
             </NavItem>
           </NavList>
           <ButtonsWrapper aria-label={'auth-buttons'}>
-            <SignUpLink
-              id="signUp"
-              to="/registration"
-              onMouseOver={darkenNav}
-              onMouseLeave={lightenNav}
-            >
+            <SignUpLink id="signUp" to="/registration">
               {authLinks.signUp[currentLanguage]}
             </SignUpLink>
             <SignInLink to="/login">

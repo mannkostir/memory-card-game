@@ -34,9 +34,6 @@ export const AppStyle = createGlobalStyle`
       font-size: calc(14px + (20 - 14) * ((100vw - 428px) / (1600 - 428)));
     }
   }
-  nav {
-    font-family: 'Neucha';
-  }
   input {
     font-size: 1em;
     letter-spacing: 0.1em;
@@ -63,7 +60,6 @@ export const AppStyle = createGlobalStyle`
   section {
     position: relative;
     text-align: center;
-    padding: 6em 0;
   }
   h1 {
     font-family: 'Neucha';

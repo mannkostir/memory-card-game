@@ -17,5 +17,9 @@ export const useAppLookDispatch = () => {
     dispatch({ type: appLookActionTypes.SET_IS_OVERLAY, isOverlay });
   };
 
-  return { setCardsTheme, setAppTheme, setIsOverlay };
+  const setIsNavHidden = (isNavHidden = false) => {
+    dispatch({ type: appLookActionTypes.SET_IS_NAV_HIDDEN, isNavHidden });
+  };
+
+  return { setCardsTheme, setAppTheme, setIsOverlay, setIsNavHidden };
 };

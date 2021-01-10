@@ -23,6 +23,12 @@ export const appLookReducer = (state, action) => {
         { isOverlay: action.isOverlay },
         localStorageKeys.appLook
       );
+    case appLookActionTypes.SET_IS_NAV_HIDDEN:
+      return updateState(
+        state,
+        { isNavHidden: action.isNavHidden },
+        localStorageKeys.appLook
+      );
     default:
       return { ...state };
   }

@@ -6,20 +6,29 @@ export const MainNav = styled.nav`
   grid-template-columns: auto 1fr auto;
   width: 100%;
   position: relative;
-  /* min-height: 10em; */
   justify-content: space-around;
   align-items: center;
-  transition: 0.1s ease-in;
+  height: 5em;
+  transition: 0.5s ease;
   background-color: ${({ theme }) => theme.colors.secondary.main};
   background: transparent;
+  visibility: visible;
   font-family: 'Neucha';
+  margin-bottom: 6em;
+  &[isnavhidden='true'] {
+    overflow: hidden;
+    height: 0;
+    margin-bottom: 0;
+  }
   @media (max-width: 1024px) {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: auto 1fr;
+    height: 10em;
   }
   @media (max-width: 768px) {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr;
+    height: 15em;
   }
 `;
 

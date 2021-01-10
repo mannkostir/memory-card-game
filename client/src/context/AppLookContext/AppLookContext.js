@@ -17,6 +17,7 @@ export const defaultAppLookState = appLookDataStorage || {
   appTheme: appThemes.testTheme || {},
   cardsThemeRef: cardsThemes.dogs.ref || '',
   isOverlay: false,
+  isNavHidden: false,
 };
 
 export const AppLookProvider = ({ children }) => {

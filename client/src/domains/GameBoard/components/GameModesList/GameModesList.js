@@ -26,7 +26,7 @@ export const GameModesList = () => {
 
   return (
     <StyledGameModeSelect>
-      <GameModeSelect.GameModesList>
+      <GameModeSelect.GameModesList style={{ marginTop: '-4.5em' }}>
         {(data, index) => (
           <RadioButton
             key={index}

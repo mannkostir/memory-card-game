@@ -34,7 +34,7 @@ const Nav = () => {
       {isAuthenticated ? (
         <MainNav ref={mainNav}>
           <ButtonsWrapper aria-label={'language-select-buttons'}>
-            <LanguageSelect />
+            <LanguageSelect style={{ alignSelf: 'self-start' }} />
           </ButtonsWrapper>
           <NavList>
             <NavItem>
@@ -96,7 +96,7 @@ const Nav = () => {
             <SignInLink to="/login">
               {authLinks.signIn[currentLanguage]}
             </SignInLink>
-            <SettingsDropdown />
+            <SettingsDropdown style={{ alignSelf: 'self-end' }} />
           </ButtonsWrapper>
         </MainNav>
       )}

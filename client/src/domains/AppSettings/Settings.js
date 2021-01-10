@@ -38,7 +38,9 @@ const Settings = () => {
           }}
         />
         <CenteredContainer>
-          <h1>{headings.mainHeading[currentLanguage]}</h1>
+          <h1 style={{ marginBottom: '2.5em' }}>
+            {headings.mainHeading[currentLanguage]}
+          </h1>
           <AppThemeSettings
             initialAppThemeRef={
               changes[changeKeys.appTheme[currentLanguage]]?.ref || appTheme.ref

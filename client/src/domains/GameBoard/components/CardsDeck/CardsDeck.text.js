@@ -11,4 +11,8 @@ export const cardsDeckText = {
     EN: 'Finish Game',
     RU: 'Закончить Игру',
   },
+  continueButton: {
+    EN: 'Continue',
+    RU: 'Продолжить',
+  },
 };

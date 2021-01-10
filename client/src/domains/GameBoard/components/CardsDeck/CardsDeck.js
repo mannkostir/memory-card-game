@@ -95,7 +95,7 @@ const CardsDeck = ({
             finishGame();
           }}
         >
-          Continue
+          {cardsDeckText.continueButton[currentLanguage]}
         </Button>
       </ModalDialog>
       <Cards

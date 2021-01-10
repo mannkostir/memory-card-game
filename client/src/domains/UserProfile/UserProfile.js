@@ -4,15 +4,19 @@ import DeleteUser from './components/DeleteUser';
 import { UsernameDisplay } from './UserProfile.styles';
 import { useAuthState } from 'context/AuthContext';
 import ChangePassword from './components/ChangePassword/ChangePassword';
+import * as text from './UserProfile.text';
+import { useLanguageContext } from 'context/LanguageContext';
 
 const UserProfile = () => {
   const { username } = useAuthState();
+
+  const { currentLanguage } = useLanguageContext();
 
   return (
     <section>
       <FlexContainer>
         <UsernameDisplay>
-          Current user: <span>{username}</span>
+          {text.headings.main[currentLanguage]}: <span>{username}</span>
         </UsernameDisplay>
         <FlexContainer
           style={{
@@ -23,7 +27,7 @@ const UserProfile = () => {
             // TO DO: finish password_change request first
             /* <ChangePassword /> */
           }
-          <DeleteUser>Delete Account</DeleteUser>
+          <DeleteUser>{text.buttons.deleteUser[currentLanguage]}</DeleteUser>
         </FlexContainer>
       </FlexContainer>
     </section>

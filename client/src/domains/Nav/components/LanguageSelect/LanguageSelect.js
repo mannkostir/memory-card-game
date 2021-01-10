@@ -5,11 +5,11 @@ import {
   LanguageSelectWrapper,
 } from './LanguageSelect.styles';
 
-const LanguageSelect = () => {
+const LanguageSelect = ({ ...args }) => {
   const { setCurrentLanguage, currentLanguage } = useLanguageContext();
 
   return (
-    <LanguageSelectWrapper>
+    <LanguageSelectWrapper {...args}>
       <LanguageSelectButton
         value="EN"
         aria-selected={currentLanguage === 'EN'}

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export const MainNav = styled.nav`
   display: grid;
@@ -64,7 +64,7 @@ export const ButtonsWrapper = styled.div`
     grid-row: 2;
     justify-content: center;
     &[aria-label='language-select-buttons'] {
-      justify-content: center;
+      justify-content: start;
       grid-row: 1;
     }
   }
@@ -120,7 +120,6 @@ export const SignInLink = styled(Link)`
   }
   @media (max-width: 428px) {
     margin: 0;
-    margin-bottom: 2em;
   }
 `;
 
